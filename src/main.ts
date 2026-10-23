@@ -1,3 +1,9 @@
+// @deno-types="./asset-url.d.ts"
+import eyeUrl from "./assets/eye.png?no-inline";
+
+// @deno-types="./asset-url.d.ts"
+import mouthUrl from "./assets/mouth.png?no-inline";
+
 const portrait = document.querySelector<HTMLDivElement>("#portrait")!;
 const spin = document.querySelector<HTMLButtonElement>("#spin")!;
 
@@ -5,7 +11,7 @@ const spin = document.querySelector<HTMLButtonElement>("#spin")!;
 const face = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 face.setAttribute("viewBox", "0 0 200 200");
 face.setAttribute("role", "img");
-face.setAttribute("aria-label", "A neutral face");
+face.setAttribute("aria-label", "A face with illustrated eye and mouth images");
 
 const head = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
 head.setAttribute("cx", "100");
@@ -17,27 +23,52 @@ head.setAttribute("stroke", "#302c29");
 head.setAttribute("stroke-width", "4");
 face.append(head);
 
-const leftEye = document.createElementNS(
+// Image: Eye
+/*source:
+ File Name: Higher quality transparent just an eye png
+ Url: https://www.deviantart.com/klaptohasdeviantart/art/Higher-quality-transparent-just-an-eye-png-990783679
+ Creator: KLAPTOHASDEVIANTART
+ License: Free License
+*/
+const eyeImage = document.createElementNS(
   "http://www.w3.org/2000/svg",
-  "ellipse",
+  "image",
 );
-leftEye.setAttribute("cx", "72");
-leftEye.setAttribute("cy", "82");
-leftEye.setAttribute("rx", "6");
-leftEye.setAttribute("ry", "9");
-leftEye.setAttribute("fill", "#302c29");
-face.append(leftEye);
+eyeImage.setAttribute("href", eyeUrl);
+eyeImage.setAttribute("x", "35");
+eyeImage.setAttribute("y", "65");
+eyeImage.setAttribute("width", "50");
+eyeImage.setAttribute("height", "50");
+face.append(eyeImage);
 
-const rightEye = document.createElementNS(
+const secondEyeImage = document.createElementNS(
   "http://www.w3.org/2000/svg",
-  "ellipse",
+  "image",
 );
-rightEye.setAttribute("cx", "128");
-rightEye.setAttribute("cy", "82");
-rightEye.setAttribute("rx", "6");
-rightEye.setAttribute("ry", "9");
-rightEye.setAttribute("fill", "#302c29");
-face.append(rightEye);
+secondEyeImage.setAttribute("href", eyeUrl);
+secondEyeImage.setAttribute("x", "115");
+secondEyeImage.setAttribute("y", "65");
+secondEyeImage.setAttribute("width", "50");
+secondEyeImage.setAttribute("height", "50");
+face.append(secondEyeImage);
+
+// Image: Mouth
+/*source:
+ File Name: Smiling Mouth With A Teeth Illustration Of Happy Free PNG and Clipart
+ Url: https://pngtree.com/freepng/smiling-mouth-with-a-teeth-illustration-of-happy_20316534.html
+ Creator: Shihab shahrirar
+ License: Free License
+*/
+const mouthImage = document.createElementNS(
+  "http://www.w3.org/2000/svg",
+  "image",
+);
+mouthImage.setAttribute("href", mouthUrl);
+mouthImage.setAttribute("x", "75");
+mouthImage.setAttribute("y", "125");
+mouthImage.setAttribute("width", "50");
+mouthImage.setAttribute("height", "50");
+face.append(mouthImage);
 
 const nose = document.createElementNS("http://www.w3.org/2000/svg", "line");
 nose.setAttribute("x1", "100");
@@ -48,16 +79,6 @@ nose.setAttribute("stroke", "#302c29");
 nose.setAttribute("stroke-width", "4");
 nose.setAttribute("stroke-linecap", "round");
 face.append(nose);
-
-const mouth = document.createElementNS("http://www.w3.org/2000/svg", "line");
-mouth.setAttribute("x1", "75");
-mouth.setAttribute("y1", "137");
-mouth.setAttribute("x2", "125");
-mouth.setAttribute("y2", "137");
-mouth.setAttribute("stroke", "#302c29");
-mouth.setAttribute("stroke-width", "4");
-mouth.setAttribute("stroke-linecap", "round");
-face.append(mouth);
 
 portrait.append(face);
 
