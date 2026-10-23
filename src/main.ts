@@ -5,16 +5,45 @@ const spin = document.querySelector<HTMLButtonElement>("#spin")!;
 const face = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 face.setAttribute("viewBox", "0 0 200 200");
 face.setAttribute("role", "img");
-face.setAttribute("aria-label", "A neutral face");
+face.setAttribute(
+  "aria-label",
+  "A face with a peach-to-pink gradient and curved smile",
+);
 
 const head = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
 head.setAttribute("cx", "100");
 head.setAttribute("cy", "100");
 head.setAttribute("rx", "78");
 head.setAttribute("ry", "86");
-head.setAttribute("fill", "#f3cf87");
+head.setAttribute("fill", "url(#face-gradient)");
 head.setAttribute("stroke", "#302c29");
 head.setAttribute("stroke-width", "4");
+
+const defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
+const gradient = document.createElementNS(
+  "http://www.w3.org/2000/svg",
+  "linearGradient",
+);
+
+gradient.setAttribute("id", "face-gradient");
+gradient.setAttribute("x1", "0%");
+gradient.setAttribute("y1", "0%");
+gradient.setAttribute("x2", "100%");
+gradient.setAttribute("y2", "0%");
+
+const stop1 = document.createElementNS("http://www.w3.org/2000/svg", "stop");
+stop1.setAttribute("offset", "0%");
+stop1.setAttribute("stop-color", "#fff176");
+gradient.append(stop1);
+
+const stop2 = document.createElementNS("http://www.w3.org/2000/svg", "stop");
+stop2.setAttribute("offset", "100%");
+stop2.setAttribute("stop-color", "#ff9800");
+gradient.append(stop2);
+
+defs.append(gradient);
+face.append(defs);
+
 face.append(head);
 
 const leftEye = document.createElementNS(
@@ -49,11 +78,9 @@ nose.setAttribute("stroke-width", "4");
 nose.setAttribute("stroke-linecap", "round");
 face.append(nose);
 
-const mouth = document.createElementNS("http://www.w3.org/2000/svg", "line");
-mouth.setAttribute("x1", "75");
-mouth.setAttribute("y1", "137");
-mouth.setAttribute("x2", "125");
-mouth.setAttribute("y2", "137");
+const mouth = document.createElementNS("http://www.w3.org/2000/svg", "path");
+mouth.setAttribute("d", "M 70 130 Q 100 155 130 130");
+mouth.setAttribute("fill", "none");
 mouth.setAttribute("stroke", "#302c29");
 mouth.setAttribute("stroke-width", "4");
 mouth.setAttribute("stroke-linecap", "round");
