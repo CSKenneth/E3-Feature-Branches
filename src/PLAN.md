@@ -4,11 +4,15 @@ A, Geometry
 
 Criterion: If face looks good without being overly cluttered.
 
+Notes: Spikey Halo ended up being created around the head
+
 B, Assets
 -Add a pair of glasses over eyes.
 -Add a hat over head.
 
 Criterion: If accessories make the character become more interesting.
+
+Notes: Turned out differently as I ended up scrapping the glasses and hat and only added eyes and a mouth
 
 C, Color and Curves
 -Add a gradient to head with colors transitioning from yellow to dark yellow or orange.
@@ -16,3 +20,5 @@ C, Color and Curves
 -Goal is to create a more expressive character.
 
 Criterion: If gradient and smiles makes the character's expression become more clear.
+
+Notes: Turned out as planned
