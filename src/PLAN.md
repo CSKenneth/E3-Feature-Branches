@@ -22,3 +22,7 @@ C, Color and Curves
 Criterion: If gradient and smiles makes the character's expression become more clear.
 
 Notes: Turned out as planned
+
+Final Choice:
+I decided to choose A as the features on the face makes it more interesting while keeping the existing spin button. Comparing with B and C, I preferred A as it was the first one
+I made and it feels closer to the original face. B and C still remain on their respective branches and A became the chosen design on main.
